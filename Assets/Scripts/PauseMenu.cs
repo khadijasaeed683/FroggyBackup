@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUIP.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-         LoadPlayerState();
+        LoadPlayerState();
     }
 
     public void OnPauseButtonPressed()

@@ -12,6 +12,6 @@ public class RotateBySlider : MonoBehaviour
     void Update()
     {
         Angle=slider.value; // Assign the float value directly to the slider
-        this.transform.rotation = Quaternion.Euler(-90, 90, Angle);  // Use Quaternion.Euler to set the rotation
+        this.transform.rotation = Quaternion.Euler(0, Angle, 0);  // Use Quaternion.Euler to set the rotation
     }
 }
