@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -6,42 +7,43 @@ public class PlayerJump : MonoBehaviour
     public float dragThreshold = 1f; // Minimum drag distance to trigger a jump
     public float maxDragDistance = 100f; // Maximum drag distance
     public LineRenderer lineRenderer; // Reference to the LineRenderer
-    public int trajectoryResolution = 30; // Number of points in the trajectory line\
-     public GameObject Player;
-     public Animator anim;
-    private bool isColliding=false;
+    public int trajectoryResolution = 30; // Number of points in the trajectory line
+    public GameObject Player;
+    public Animator anim;
     public AudioSource audioSource;
     public AudioClip audioClip;
+    
+    public SliderEventHandler sliderHandler; // Reference to SliderEventHandler
 
     private Rigidbody rb;
     private Vector2 dragStartPosition;
     private bool isDragging = false;
-   
+    private bool isColliding = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         lineRenderer.positionCount = trajectoryResolution;
+
+        if (sliderHandler == null)
+        {
+            sliderHandler = FindObjectOfType<SliderEventHandler>();
+            if (sliderHandler == null)
+            {
+                Debug.LogWarning("SliderEventHandler not found in the scene.");
+            }
+        }
     }
 
     void Update()
     {
+        if (sliderHandler != null && sliderHandler.sliderMoving) return; // Skip jump and trajectory logic if using the slider
+
         AddDragSound();
 
-        //linerenderer set position 
-        
-        // Vector3 newPosition = lineRenderer.transform.position;
-        //  lineRenderer.SetPosition(0,newPosition+ new Vector3(lx, ly, lz));
+        // Jump animation
+        anim.SetBool("jump", !isColliding);
 
-        //jump animation 
-        if (!isColliding){
-            anim.SetBool("jump", true);
-        }
-        else{
-            anim.SetBool("jump",false);
-            
-        }
-        //Jump Animation Ended
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -98,7 +100,6 @@ public class PlayerJump : MonoBehaviour
                     }
                     break;
             }
-            
         }
     }
 
@@ -114,25 +115,31 @@ public class PlayerJump : MonoBehaviour
         lineRenderer.positionCount = points.Length;
         lineRenderer.SetPositions(points);
     }
-     private void OnCollisionEnter(Collision other) {
-        isColliding=true;
-       
-     }
-     private void OnCollisionExit(Collision other){
-        isColliding=false;
-     }
-     public void OnCollisionStay(Collision other){
-        isColliding=true;
-     }
 
-     private void AddDragSound(){
-        if (isDragging){
-            if (audioSource !=null && audioClip!=null){
-                audioSource.clip=audioClip;
+    private void OnCollisionEnter(Collision other)
+    {
+        isColliding = true;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        isColliding = false;
+    }
+
+    public void OnCollisionStay(Collision other)
+    {
+        isColliding = true;
+    }
+
+    private void AddDragSound()
+    {
+        if (isDragging)
+        {
+            if (audioSource != null && audioClip != null)
+            {
+                audioSource.clip = audioClip;
                 audioSource.Play();
-                
             }
-        
         }
-     }
+    }
 }
