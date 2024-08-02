@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+//SceneManagement is Required at line#123
 public class PlayerJump : MonoBehaviour
 {
     public float jumpForceMultiplier = 0.1f; // Adjust the jump force multiplier
@@ -119,6 +120,7 @@ public class PlayerJump : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         isColliding = true;
+        
     }
 
     private void OnCollisionExit(Collision other)
