@@ -254,7 +254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6332744008642146940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5014361269100608043}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadSceneByName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2523656662341655771
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2706862978902920277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5014361269100608043}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LevelsCanvas
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7173765693475378591
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +834,7 @@ GameObject:
   - component: {fileID: 2658627427516393889}
   - component: {fileID: 5623720824607260148}
   - component: {fileID: 6699598133924405150}
+  - component: {fileID: 5014361269100608043}
   m_Layer: 5
   m_Name: LoseCanvas
   m_TagString: Untagged
@@ -900,3 +925,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5014361269100608043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7173765693475378591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33987e09247318c4a88a0b5041735aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 2815945275386775720, guid: 4f7b85456cfc1d34c89e94228ca550ae, type: 3}
+  - {fileID: 7173765693475378591}
+  - {fileID: 4446768447003459997, guid: 1bef54e3ff7d5f0418e9099da27ebb23, type: 3}
+  - {fileID: 4730956053255911836, guid: 839059e237511dd448d79a702bebdea2, type: 3}
+  scrollViewPrefabs: []

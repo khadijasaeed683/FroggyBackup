@@ -329,7 +329,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5763310857394723777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7811124649997707279}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LevelsCanvas
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4446768447003459997
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +354,7 @@ GameObject:
   - component: {fileID: 6889837829868355335}
   - component: {fileID: 5775925312163532751}
   - component: {fileID: 1398140389353866730}
+  - component: {fileID: 7811124649997707279}
   m_Layer: 5
   m_Name: WinCanvas
   m_TagString: Untagged
@@ -432,6 +445,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7811124649997707279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446768447003459997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33987e09247318c4a88a0b5041735aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 4730956053255911836, guid: 839059e237511dd448d79a702bebdea2, type: 3}
+  - {fileID: 7173765693475378591, guid: 3bc0e7a932a2f974ea69bcd911ef3320, type: 3}
+  - {fileID: 4446768447003459997}
+  scrollViewPrefabs: []
 --- !u!1 &4598930848476479867
 GameObject:
   m_ObjectHideFlags: 0
