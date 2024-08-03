@@ -10,14 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        if (pauseMenuUIP == null)
-        {
-            Debug.LogError("PauseMenuUIP is not assigned in the Inspector.");
-        }
-        else
-        {
-            Debug.LogError("Pause manu uip is assigned");
-        }
+       
     }
     public void SavePlayerState()
     {
