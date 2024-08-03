@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //SceneManagement is Required at line#123
 public class PlayerJump : MonoBehaviour
@@ -13,16 +14,22 @@ public class PlayerJump : MonoBehaviour
     public Animator anim;
     public AudioSource audioSource;
     public AudioClip audioClip;
+    public GameObject  losePanel;
+    public GameObject  winPanel;
     
     public SliderEventHandler sliderHandler; // Reference to SliderEventHandler
 
     private Rigidbody rb;
+    private bool dragSoundController;
     private Vector2 dragStartPosition;
     private bool isDragging = false;
     private bool isColliding = false;
 
     void Start()
+
     {
+        winPanel.SetActive(false);
+        losePanel.SetActive(false);
         rb = GetComponent<Rigidbody>();
         lineRenderer.positionCount = trajectoryResolution;
 
@@ -54,9 +61,11 @@ public class PlayerJump : MonoBehaviour
                 case TouchPhase.Began:
                     dragStartPosition = touch.position;
                     isDragging = true;
+                    dragSoundController=false;
                     break;
 
                 case TouchPhase.Moved:
+                dragSoundController=true;
                     if (isDragging)
                     {
                         Vector2 dragCurrentPosition = touch.position;
@@ -78,6 +87,7 @@ public class PlayerJump : MonoBehaviour
                     break;
 
                 case TouchPhase.Ended:
+                dragSoundController=false;
                     if (isDragging)
                     {
                         Vector2 dragEndPosition = touch.position;
@@ -120,6 +130,14 @@ public class PlayerJump : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         isColliding = true;
+        if (other.gameObject.tag == "Water"){
+            losePanel.SetActive(true);
+            winPanel.SetActive(false);
+        }
+        else if (other.gameObject.tag == "Princess"){
+            winPanel.SetActive(true);
+            losePanel.SetActive(false);
+        }
         
     }
 
@@ -135,7 +153,7 @@ public class PlayerJump : MonoBehaviour
 
     private void AddDragSound()
     {
-        if (isDragging)
+        if (dragSoundController)
         {
             if (audioSource != null && audioClip != null)
             {

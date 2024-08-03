@@ -11,8 +11,7 @@ public class DestroyOnCollision : MonoBehaviour
         {
             // Destroy this game object after 2 seconds.
             Destroy(gameObject, 10.0f);
-             GameObject Exp=Instantiate(Particles,transform.position,transform.rotation);
-            Destroy(Exp,0.5f);
+             
             }        
     }
 }
