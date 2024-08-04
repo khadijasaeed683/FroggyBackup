@@ -28,6 +28,7 @@ public class PlayerJump : MonoBehaviour
     void Start()
 
     {
+        Time.timeScale = 1.0f;
         winPanel.SetActive(false);
         losePanel.SetActive(false);
         rb = GetComponent<Rigidbody>();
@@ -133,6 +134,7 @@ public class PlayerJump : MonoBehaviour
         if (other.gameObject.tag == "Water"){
             losePanel.SetActive(true);
             winPanel.SetActive(false);
+           Time.timeScale = 0f;
         }
         else if (other.gameObject.tag == "Princess"){
             winPanel.SetActive(true);
