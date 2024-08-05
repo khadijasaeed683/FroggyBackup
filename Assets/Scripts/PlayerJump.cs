@@ -13,6 +13,7 @@ public class PlayerJump : MonoBehaviour
     public int trajectoryResolution = 30; // Number of points in the trajectory line
     public GameObject Player;
     public Animator anim;
+    public  Animator PrAnim;
     public AudioSource audioSource;
     public AudioClip audioClip;
     public GameObject  losePanel;
@@ -27,6 +28,7 @@ public class PlayerJump : MonoBehaviour
     private bool isDragging = false;
     private bool isColliding = false;
     private  int ScoreCount=0;
+    private bool PrincessCol=false;
 
     void Start()
 
@@ -57,6 +59,8 @@ public class PlayerJump : MonoBehaviour
 
         // Jump animation
         anim.SetBool("jump", !isColliding);
+        //Princess Animation 
+        PrAnim.SetBool("Variable", PrincessCol);
 
         if (Input.touchCount > 0)
         {
@@ -144,6 +148,7 @@ public class PlayerJump : MonoBehaviour
         else if (other.gameObject.tag == "Princess"){
             winPanel.SetActive(true);
             losePanel.SetActive(false);
+            PrincessCol=true;
         }
         
     }
