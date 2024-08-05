@@ -21,6 +21,9 @@ public class PlayerJump : MonoBehaviour
     
     public SliderEventHandler sliderHandler;
     public TextMeshProUGUI Scoretext;
+    public TextMeshProUGUI WinScoretext;
+    public TextMeshProUGUI LoseScoretext;
+
 
     private Rigidbody rb;
     private bool dragSoundController;
@@ -29,6 +32,8 @@ public class PlayerJump : MonoBehaviour
     private bool isColliding = false;
     private  int ScoreCount=0;
     private bool PrincessCol=false;
+
+
 
     void Start()
 
@@ -40,6 +45,9 @@ public class PlayerJump : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         lineRenderer.positionCount = trajectoryResolution;
         Scoretext.text="Score :"+ScoreCount.ToString();
+        WinScoretext.text="Score :"+ScoreCount.ToString();
+        LoseScoretext.text="Score :"+ScoreCount.ToString();
+
 
         if (sliderHandler == null)
         {
@@ -141,14 +149,17 @@ public class PlayerJump : MonoBehaviour
     {
         isColliding = true;
         if (other.gameObject.tag == "Water"){
+            LoseScoretext.text = "Score :" + ScoreCount.ToString();
             losePanel.SetActive(true);
             winPanel.SetActive(false);
-           Time.timeScale = 0f;
+            Time.timeScale = 0f;
         }
         else if (other.gameObject.tag == "Princess"){
             winPanel.SetActive(true);
+            WinScoretext.text = "Score :" + ScoreCount.ToString();
             losePanel.SetActive(false);
             PrincessCol=true;
+            Time.timeScale = 0f;
         }
         
     }
