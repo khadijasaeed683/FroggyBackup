@@ -644,8 +644,7 @@ MonoBehaviour:
   panels:
   - {fileID: 179216071645606253}
   - {fileID: 772828669}
-  scrollViewPrefabs:
-  - {fileID: 179216071645606253}
+  scrollViewPrefabs: []
 --- !u!1 &1136420399
 GameObject:
   m_ObjectHideFlags: 0
