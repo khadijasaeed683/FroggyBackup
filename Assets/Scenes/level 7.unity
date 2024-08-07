@@ -4504,6 +4504,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 188207272}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &384832983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8492802029904942781, guid: 3bc0e7a932a2f974ea69bcd911ef3320,
+    type: 3}
+  m_PrefabInstance: {fileID: 1239019441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &443958294
 GameObject:
   m_ObjectHideFlags: 0
@@ -10054,6 +10066,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2452ea389550c8d47afc924255c7f171, type: 3}
+--- !u!114 &997687072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1289051749465446416, guid: 1bef54e3ff7d5f0418e9099da27ebb23,
+    type: 3}
+  m_PrefabInstance: {fileID: 1834744442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1013952352
 GameObject:
   m_ObjectHideFlags: 0
@@ -18117,6 +18141,8 @@ MonoBehaviour:
   winPanel: {fileID: 676595664}
   sliderHandler: {fileID: 870452452}
   Scoretext: {fileID: 1556089735}
+  WinScoretext: {fileID: 997687072}
+  LoseScoretext: {fileID: 384832983}
 --- !u!120 &1770942939
 LineRenderer:
   serializedVersion: 2
