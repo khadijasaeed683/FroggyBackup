@@ -148,7 +148,7 @@ public class PlayerJump : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         isColliding = true;
-        if (other.gameObject.tag == "Water"){
+        if (other.gameObject.tag == "Water"|| other.gameObject.tag=="Bird" ){
             LoseScoretext.text = "Score :" + ScoreCount.ToString();
             losePanel.SetActive(true);
             winPanel.SetActive(false);
