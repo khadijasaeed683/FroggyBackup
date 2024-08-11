@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16677,6 +16677,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7811124649997707279, guid: 1bef54e3ff7d5f0418e9099da27ebb23,
+        type: 3}
+      propertyPath: panels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811124649997707279, guid: 1bef54e3ff7d5f0418e9099da27ebb23,
+        type: 3}
+      propertyPath: panels.Array.data[3]
+      value: 
+      objectReference: {fileID: 676595664}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19329,7 +19339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panels:
   - {fileID: 925396070}
-  - {fileID: 7173765693475378591, guid: 3bc0e7a932a2f974ea69bcd911ef3320, type: 3}
+  - {fileID: 144064712}
   - {fileID: 4446768447003459997, guid: 1bef54e3ff7d5f0418e9099da27ebb23, type: 3}
   - {fileID: 2146715397}
   scrollViewPrefabs: []
